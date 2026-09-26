@@ -2,7 +2,8 @@
 
 > **Java Backend Developer & AI/ML Engineer**  
 > Building Scalable Java Backends, Real-Time Microservices & AI-Powered Platforms.  
-> 📍 Kolkata, West Bengal, India · 🎓 NIT Durgapur CSE (AI & ML)
+> 📍 Kolkata, West Bengal, India
+> Visit : https://shubhamh4x.up.railway.app/
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-shubhamh4X-181717?logo=github)](https://github.com/shubhamh4X)
@@ -38,44 +39,6 @@ A high-performance, developer-centric interactive portfolio built with modern We
 
 ---
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- **Node.js** (v18.0.0 or higher recommended)
-- **npm** (v9.0.0 or higher)
-
-### Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/shubhamh4X/portfolio.git
-   cd portfolio
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start local development server:**
-   ```bash
-   npm run dev
-   ```
-   Open your browser and navigate to `http://localhost:3000`.
-
----
-
-## 📜 Available Scripts
-
-- `npm run dev`: Runs the development server on port 3000 with host binding.
-- `npm run build`: Compiles TypeScript and creates an optimized production bundle in `dist/`.
-- `npm run preview`: Previews the production build locally.
-- `npm run lint`: Performs strict TypeScript validation (`tsc --noEmit`).
-- `npm run clean`: Cleans build artifacts (`dist`).
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -108,16 +71,6 @@ A high-performance, developer-centric interactive portfolio built with modern We
 └── package.json            # Project manifest
 ```
 
----
-
-## 🤝 Contact & Connect
-
-- **Portfolio:** [shubhamh4X](https://github.com/shubhamh4X)
-- **LinkedIn:** [linkedin.com/in/shubhamh4x](https://www.linkedin.com/in/shubhamh4x/)
-- **Email:** Contact via the interactive message modal in the application
-- **Location:** Kolkata, West Bengal, India
-
----
 
 ## 📄 License
 
