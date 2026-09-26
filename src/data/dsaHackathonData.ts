@@ -12,6 +12,7 @@ export interface DsaTelemetryMetrics {
   contestRating: number;
   topPercentile: number;
   activeStreakDays: number;
+  monthlyVelocity: { month: string; solved: number; rating: number }[];
 }
 
 export const DSA_TELEMETRY: DsaTelemetryMetrics = {
@@ -25,7 +26,15 @@ export const DSA_TELEMETRY: DsaTelemetryMetrics = {
   acceptanceRate: 74.2,
   contestRating: 1846,
   topPercentile: 6.4,
-  activeStreakDays: 148
+  activeStreakDays: 148,
+  monthlyVelocity: [
+    { month: 'Apr', solved: 22, rating: 1620 },
+    { month: 'May', solved: 31, rating: 1685 },
+    { month: 'Jun', solved: 38, rating: 1730 },
+    { month: 'Jul', solved: 44, rating: 1775 },
+    { month: 'Aug', solved: 52, rating: 1812 },
+    { month: 'Sep', solved: 59, rating: 1846 }
+  ]
 };
 
 export const DSA_TOPIC_BREAKDOWN = [

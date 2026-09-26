@@ -146,9 +146,35 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
                     </div>
                   </div>
                 </div>
+
+                <div className="grid grid-cols-3 gap-2.5 mt-5 pt-4 border-t border-neutral-800/70">
+                  <div className={`p-2.5 rounded-xl border text-center ${
+                    darkMode ? 'bg-neutral-950/60 border-neutral-800/80' : 'bg-neutral-50 border-neutral-200'
+                  }`}>
+                    <div className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-1">Contest Rating</div>
+                    <div className="text-base font-bold font-mono text-cyan-400">{DSA_TELEMETRY.contestRating}</div>
+                    <div className="text-[9px] font-mono text-neutral-500 mt-0.5">Knight Level</div>
+                  </div>
+
+                  <div className={`p-2.5 rounded-xl border text-center ${
+                    darkMode ? 'bg-neutral-950/60 border-neutral-800/80' : 'bg-neutral-50 border-neutral-200'
+                  }`}>
+                    <div className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-1">Global Standing</div>
+                    <div className="text-base font-bold font-mono text-emerald-400">Top {DSA_TELEMETRY.topPercentile}%</div>
+                    <div className="text-[9px] font-mono text-neutral-500 mt-0.5">93.6th Percentile</div>
+                  </div>
+
+                  <div className={`p-2.5 rounded-xl border text-center ${
+                    darkMode ? 'bg-neutral-950/60 border-neutral-800/80' : 'bg-neutral-50 border-neutral-200'
+                  }`}>
+                    <div className="text-[10px] font-mono text-neutral-400 uppercase tracking-wider mb-1">Total Solved</div>
+                    <div className="text-base font-bold font-mono text-amber-400">{DSA_TELEMETRY.totalSolved}</div>
+                    <div className="text-[9px] font-mono text-neutral-500 mt-0.5">Problems</div>
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-6 border-t border-neutral-800/80 mt-6 flex items-center justify-between text-xs font-mono">
+              <div className="pt-4 border-t border-neutral-800/80 mt-4 flex items-center justify-between text-xs font-mono">
                 <span className="text-neutral-400">Consistency Streak</span>
                 <span className="text-emerald-400 font-bold flex items-center gap-1.5">
                   <Flame className="w-3.5 h-3.5 text-amber-400" />
@@ -176,16 +202,19 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
                 <div 
                   key={i} 
                   tabIndex={0}
-                  className={`group relative p-3 rounded-xl border cursor-pointer select-none transition-all duration-300 transform-gpu hover:-translate-y-1.5 hover:scale-[1.04] focus:-translate-y-1.5 focus:scale-[1.04] ${
+                  title={topic.name}
+                  className={`group relative p-3 rounded-xl border cursor-pointer select-none transition-all duration-300 transform-gpu flex flex-col justify-between hover:-translate-y-1.5 hover:scale-[1.04] focus:-translate-y-1.5 focus:scale-[1.04] ${
                     darkMode 
                       ? 'border-neutral-800/90 bg-neutral-950/60 hover:bg-neutral-900/90 hover:border-emerald-500/40 hover:shadow-[0_12px_24px_-6px_rgba(16,185,129,0.22)]' 
                       : 'border-neutral-200 bg-neutral-50 hover:bg-white hover:border-emerald-500/40 hover:shadow-[0_12px_24px_-6px_rgba(0,0,0,0.12)]'
                   }`}
                 >
-                  <div className="text-xs font-semibold text-neutral-200 truncate group-hover:text-emerald-400 transition-colors">{topic.name}</div>
-                  <div className="text-lg font-bold font-mono text-emerald-400 mt-1 transition-transform duration-300 group-hover:scale-105 origin-left">{topic.count}</div>
-                  <div className="text-[10px] font-mono text-neutral-500 mt-0.5">problems solved</div>
-                  <div className="w-full bg-neutral-800 h-1 rounded-full mt-2 overflow-hidden">
+                  <div>
+                    <div className="text-xs font-semibold text-neutral-200 leading-snug group-hover:text-emerald-400 transition-colors min-h-[2.25rem] flex items-center">{topic.name}</div>
+                    <div className="text-lg font-bold font-mono text-emerald-400 mt-1 transition-transform duration-300 group-hover:scale-105 origin-left">{topic.count}</div>
+                    <div className="text-[10px] font-mono text-neutral-500 mt-0.5">problems solved</div>
+                  </div>
+                  <div className="w-full bg-neutral-800 h-1 rounded-full mt-3 overflow-hidden">
                     <div 
                       className="bg-emerald-400 h-full rounded-full transition-all duration-500 group-hover:bg-emerald-300" 
                       style={{ width: `${topic.percentage}%` }}
