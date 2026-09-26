@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080b11"/>
+      <stop offset="50%" stop-color="#0e131d"/>
+      <stop offset="100%" stop-color="#0a0e17"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#161f30" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0e1422" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.75" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Atmospheric Glow Accents -->
+  <circle cx="180" cy="110" r="160" fill="#38bdf8" fill-opacity="0.06" filter="url(#glow)"/>
+  <circle cx="640" cy="320" r="180" fill="#818cf8" fill-opacity="0.06" filter="url(#glow)"/>
+
+  <!-- Top Title / Editor Window Bar -->
+  <rect x="25" y="20" width="750" height="42" rx="8" fill="#111827" stroke="#1f2937" stroke-width="1"/>
+  <circle cx="45" cy="41" r="5" fill="#ef4444"/>
+  <circle cx="62" cy="41" r="5" fill="#f59e0b"/>
+  <circle cx="79" cy="41" r="5" fill="#10b981"/>
+  <text x="105" y="45" fill="#94a3b8" font-family="monospace" font-size="12">zenx://workspace/core-engine · TypeScript &amp; Electron IPC Multi-Buffer</text>
+  <rect x="635" y="28" width="125" height="26" rx="4" fill="#0c4a6e" stroke="#38bdf8" stroke-width="0.8"/>
+  <text x="648" y="45" fill="#7dd3fc" font-family="monospace" font-weight="bold" font-size="11">● 60 FPS 0ms Drop</text>
+
+  <!-- Pillar 1: Piece Table & Virtualized Editor Buffer -->
+  <rect x="35" y="85" width="220" height="235" rx="10" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1.2"/>
+  <rect x="35" y="85" width="220" height="32" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="50" y="106" fill="#38bdf8" font-family="monospace" font-weight="bold" font-size="12">01. PIECE TREE BUFFER</text>
+
+  <rect x="50" y="130" width="190" height="40" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="147" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Piece Table Data Structure</text>
+  <text x="60" y="161" fill="#94a3b8" font-family="monospace" font-size="9.5">O(1) Inserts · Zero Copy Buffers</text>
+
+  <rect x="50" y="180" width="190" height="40" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="197" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Viewport Virtualization</text>
+  <text x="60" y="211" fill="#94a3b8" font-family="monospace" font-size="9.5">500,000+ Lines @ 60 FPS</text>
+
+  <rect x="50" y="230" width="190" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="60" y="247" fill="#7dd3fc" font-family="monospace" font-size="10">Multi-Cursor Matrix [x, y]</text>
+  <text x="60" y="263" fill="#64748b" font-family="monospace" font-size="9">Debounced Undo/Redo Tree</text>
+
+  <!-- Connective Data Streams: 1 to 2 -->
+  <path d="M 255 190 L 290 190" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="290,187 297,190 290,193" fill="#38bdf8"/>
+
+  <!-- Pillar 2: LSP JSON-RPC & Tree-sitter Tokenizer -->
+  <rect x="290" y="85" width="220" height="235" rx="10" fill="url(#cardGrad)" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1.2"/>
+  <rect x="290" y="85" width="220" height="32" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="305" y="106" fill="#818cf8" font-family="monospace" font-weight="bold" font-size="12">02. LSP &amp; AST ENGINE</text>
+
+  <rect x="305" y="130" width="190" height="40" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="315" y="147" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Tree-sitter Incremental AST</text>
+  <text x="315" y="161" fill="#94a3b8" font-family="monospace" font-size="9.5">Grammar Parsing &lt; 3ms Delta</text>
+
+  <rect x="305" y="180" width="190" height="40" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="315" y="197" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Language Server Protocol</text>
+  <text x="315" y="211" fill="#94a3b8" font-family="monospace" font-size="9.5">JSON-RPC 3.17 Bidirectional Bus</text>
+
+  <rect x="305" y="230" width="190" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="315" y="247" fill="#a78bfa" font-family="monospace" font-size="10">WebWorker Semantic Tokens</text>
+  <text x="315" y="263" fill="#64748b" font-family="monospace" font-size="9">Diagnostics &amp; Autocomplete</text>
+
+  <!-- Connective Data Streams: 2 to 3 -->
+  <path d="M 510 190 L 545 190" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 3"/>
+  <polygon points="545,187 552,190 545,193" fill="#818cf8"/>
+
+  <!-- Pillar 3: Terminal PTY & Extension Sandbox -->
+  <rect x="545" y="85" width="220" height="235" rx="10" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1.2"/>
+  <rect x="545" y="85" width="220" height="32" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="560" y="106" fill="#c084fc" font-family="monospace" font-weight="bold" font-size="12">03. RUNTIME &amp; TERMINAL</text>
+
+  <rect x="560" y="130" width="190" height="40" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="570" y="147" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Xterm.js PTY Shell Bridge</text>
+  <text x="570" y="161" fill="#94a3b8" font-family="monospace" font-size="9.5">Node node-pty Child Processes</text>
+
+  <rect x="560" y="180" width="190" height="40" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="570" y="197" fill="#e2e8f0" font-family="sans-serif" font-weight="600" font-size="11">Extension Host Isolation</text>
+  <text x="570" y="211" fill="#94a3b8" font-family="monospace" font-size="9.5">Sandboxed Worker Threads</text>
+
+  <rect x="560" y="230" width="190" height="42" rx="6" fill="#090d16" stroke="#334155" stroke-width="1"/>
+  <text x="570" y="247" fill="#f472b6" font-family="monospace" font-size="10">Multi-Split Grid Layout</text>
+  <text x="570" y="263" fill="#64748b" font-family="monospace" font-size="9">Zero-Flicker Layout Engine</text>
+
+  <!-- Bottom Telemetry & Operational Bar -->
+  <rect x="35" y="340" width="730" height="85" rx="8" fill="#0c1017" stroke="#1e293b" stroke-width="1"/>
+  
+  <rect x="50" y="355" width="155" height="55" rx="6" fill="#111827" stroke="#374151" stroke-width="0.8"/>
+  <text x="60" y="372" fill="#94a3b8" font-family="monospace" font-size="10">BASE MEMORY PROFILE</text>
+  <text x="60" y="396" fill="#38bdf8" font-family="monospace" font-weight="bold" font-size="16">38.2 MB</text>
+  <text x="145" y="396" fill="#64748b" font-family="monospace" font-size="10">Lean</text>
+
+  <rect x="220" y="355" width="165" height="55" rx="6" fill="#111827" stroke="#374151" stroke-width="0.8"/>
+  <text x="230" y="372" fill="#94a3b8" font-family="monospace" font-size="10">BUFFER LOAD (100K LINES)</text>
+  <text x="230" y="396" fill="#818cf8" font-family="monospace" font-weight="bold" font-size="16">2.4 ms</text>
+  <text x="310" y="396" fill="#64748b" font-family="monospace" font-size="10">PieceTree</text>
+
+  <rect x="400" y="355" width="165" height="55" rx="6" fill="#111827" stroke="#374151" stroke-width="0.8"/>
+  <text x="410" y="372" fill="#94a3b8" font-family="monospace" font-size="10">KEYSTROKE-TO-SCREEN</text>
+  <text x="410" y="396" fill="#34d399" font-family="monospace" font-weight="bold" font-size="16">&lt; 1.2 ms</text>
+  <text x="500" y="396" fill="#64748b" font-family="monospace" font-size="10">Zero-Lag</text>
+
+  <rect x="580" y="355" width="170" height="55" rx="6" fill="#111827" stroke="#374151" stroke-width="0.8"/>
+  <text x="590" y="372" fill="#94a3b8" font-family="monospace" font-size="10">LSP JSON-RPC PROTOCOL</text>
+  <text x="590" y="396" fill="#c084fc" font-family="monospace" font-weight="bold" font-size="16">v3.17 Active</text>
+  <text x="690" y="396" fill="#64748b" font-family="monospace" font-size="10">Sync</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Vibrant Glowing Gradient -->
+    <linearGradient id="neonEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Intense White-Hot Core Gradient -->
+    <linearGradient id="plasmaCoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="45%" stop-color="#f0fdf4" />
+      <stop offset="75%" stop-color="#a7f3d0" />
+      <stop offset="100%" stop-color="#67e8f9" />
+    </linearGradient>
+
+    <!-- Multi-stage Glow Filter for Browser Tab Favicon Support -->
+    <filter id="emeraldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur1" />
+      <feGaussianBlur stdDeviation="1.5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Only Glowing 'S' Monogram -->
+  <g filter="url(#emeraldGlow)">
+    <!-- Deep Ambient Outer Glow Halo -->
+    <path d="M48 19C44 11 36 9 32 9C22 9 15 15 15 24C15 33 49 31 49 40C49 49 42 55 32 55C22 55 16 53 16 45" 
+          stroke="#059669" 
+          stroke-width="11" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          opacity="0.38" />
+
+    <!-- Luminous Emerald Corona -->
+    <path d="M48 19C44 11 36 9 32 9C22 9 15 15 15 24C15 33 49 31 49 40C49 49 42 55 32 55C22 55 16 53 16 45" 
+          stroke="#10b981" 
+          stroke-width="7.5" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          opacity="0.75" />
+
+    <!-- Electric Mint Primary Stroke -->
+    <path d="M48 19C44 11 36 9 32 9C22 9 15 15 15 24C15 33 49 31 49 40C49 49 42 55 32 55C22 55 16 53 16 45" 
+          stroke="url(#neonEmeraldGrad)" 
+          stroke-width="5" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+
+    <!-- Radiant High-Luminance Center Filament -->
+    <path d="M48 19C44 11 36 9 32 9C22 9 15 15 15 24C15 33 49 31 49 40C49 49 42 55 32 55C22 55 16 53 16 45" 
+          stroke="url(#plasmaCoreGrad)" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          opacity="0.95" />
+  </g>
+</svg>
