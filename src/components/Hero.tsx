@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Github, Linkedin, Mail, ExternalLink, Server, Radio, Database, Sparkles } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, ExternalLink, Server, Radio, Database, Cpu } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { RuntimeTerminal } from './RuntimeTerminal';
 import { TextReveal } from './TextReveal';
@@ -44,7 +44,7 @@ const ARCHITECTURAL_PILLARS = [
     badgeBg: 'bg-teal-500/10 text-teal-400 border-teal-500/20'
   },
   {
-    icon: Sparkles,
+    icon: Cpu,
     title: 'Hybrid AI & Vector Search',
     tag: 'PGVECTOR · RAG',
     description: 'Production semantic retrieval combining dense embedding vector search with relational filters and asynchronous FastAPI endpoints.',

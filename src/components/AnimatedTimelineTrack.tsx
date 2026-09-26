@@ -31,7 +31,7 @@ export const AnimatedTimelineTrack: React.FC<AnimatedTimelineTrackProps> = ({
     const items = containerRef.current.querySelectorAll<HTMLElement>('[data-timeline-item]');
     const tops: number[] = [];
     items.forEach((item) => {
-      tops.push(item.offsetTop + 24); // Aligned with the card header baseline
+      tops.push(item.offsetTop + 24); 
     });
     setMilestoneTops(tops);
   }, []);
@@ -50,7 +50,7 @@ export const AnimatedTimelineTrack: React.FC<AnimatedTimelineTrackProps> = ({
 
       const diff = targetProgressRef.current - currentProgressRef.current;
       if (Math.abs(diff) > 0.001) {
-        currentProgressRef.current += diff * 0.14; // Buttery dampening
+        currentProgressRef.current += diff * 0.14; 
         setProgress(currentProgressRef.current);
       } else {
         currentProgressRef.current = targetProgressRef.current;

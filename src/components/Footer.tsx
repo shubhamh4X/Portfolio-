@@ -39,9 +39,6 @@ export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume }) => {
               <a href="#github" className="hover:text-emerald-400 transition-colors">
                 Open Source
               </a>
-              <a href="#hackathons" className="hover:text-emerald-400 transition-colors">
-                Hackathons
-              </a>
               <a href="#dsa-telemetry" className="hover:text-emerald-400 transition-colors">
                 Algorithms
               </a>

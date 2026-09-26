@@ -37,9 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a href="#github" className="transition-colors hover:text-emerald-400">
             Open Source
           </a>
-          <a href="#hackathons" className="transition-colors hover:text-emerald-400">
-            Hackathons
-          </a>
           <a href="#dsa-telemetry" className="transition-colors hover:text-emerald-400">
             Algorithms
           </a>

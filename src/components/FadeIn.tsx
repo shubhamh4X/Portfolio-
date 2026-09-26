@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 interface FadeInProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // ms
-  duration?: number; // ms
-  yOffset?: number; // subtle vertical float in pixels, default 10px
+  delay?: number; 
+  duration?: number; 
+  yOffset?: number; 
   as?: React.ElementType;
   once?: boolean;
 }

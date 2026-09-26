@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 interface TextRevealProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // ms
-  duration?: number; // ms
-  distance?: number; // px from left
+  delay?: number; 
+  duration?: number; 
+  distance?: number; 
   as?: React.ElementType;
   once?: boolean;
 }
@@ -55,7 +55,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px', // triggers right as the scroll wheel brings it into view
+        rootMargin: '0px 0px -40px 0px', 
       }
     );
 

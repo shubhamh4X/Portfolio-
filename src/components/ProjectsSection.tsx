@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { ArrowUpRight, Search, Activity, Cpu, Layers, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Search, Activity, Cpu, Layers } from 'lucide-react';
 import { Project, ProjectCategory } from '../types/portfolio';
 import { PROJECTS } from '../data/portfolioData';
 import { TextReveal } from './TextReveal';

@@ -12,7 +12,7 @@ interface SpotlightCardProps {
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = '',
-  spotlightColor = 'rgba(52, 211, 153, 0.12)', // Subtle emerald glow
+  spotlightColor = 'rgba(52, 211, 153, 0.12)', 
   spotlightSize = 350,
   darkMode = true,
   onClick,

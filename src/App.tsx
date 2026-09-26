@@ -4,7 +4,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProjectsSection } from './components/ProjectsSection';
 import { DsaTelemetrySection } from './components/DsaTelemetrySection';
-import { HackathonTimelineSection } from './components/HackathonTimelineSection';
 import { ProjectModal } from './components/ProjectModal';
 import { GitHubSection } from './components/GitHubSection';
 import { BlogSection } from './components/BlogSection';
@@ -146,10 +145,6 @@ export default function App() {
         />
 
         <GitHubSection
-          darkMode={darkMode}
-        />
-
-        <HackathonTimelineSection
           darkMode={darkMode}
         />
 

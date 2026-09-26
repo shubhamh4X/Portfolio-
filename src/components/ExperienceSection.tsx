@@ -6,8 +6,7 @@ import {
   ChevronRight, 
   Trophy, 
   ShieldCheck,
-  MapPin,
-  Sparkles
+  MapPin
 } from 'lucide-react';
 import { 
   WORK_EXPERIENCE, 
@@ -290,7 +289,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                       </div>
                     </div>
                     <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/40 border border-cyan-500/20 px-2 py-0.5 rounded flex items-center gap-1 shrink-0">
-                      <Sparkles className="w-3 h-3" />
+                      <MapPin className="w-3 h-3 text-cyan-400" />
                       <span>{btechDegree.location}</span>
                     </span>
                   </div>

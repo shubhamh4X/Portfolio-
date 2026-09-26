@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // in milliseconds
-  duration?: number; // in milliseconds
-  distance?: number; // in pixels (offset from left)
+  delay?: number; 
+  duration?: number; 
+  distance?: number; 
   direction?: 'left' | 'right' | 'up' | 'down';
   as?: React.ElementType;
   once?: boolean;
@@ -89,7 +89,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     transitionProperty: 'opacity, transform, filter',
     transitionDuration: `${duration}ms`,
     transitionDelay: `${delay}ms`,
-    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)', // Smooth easeOutExpo
+    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)', 
     willChange: 'opacity, transform, filter',
   };
 

@@ -7,9 +7,8 @@ import {
   Clock, 
   ChevronRight, 
   ChevronLeft, 
-  Sparkles,
-  GitCommit,
-  Layers,
+  GitCommit, 
+  Layers, 
   ArrowRight
 } from 'lucide-react';
 import { ProjectDevelopmentLifecycle, DevelopmentPhase } from '../types/portfolio';

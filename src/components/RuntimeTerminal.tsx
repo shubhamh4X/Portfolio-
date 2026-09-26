@@ -88,7 +88,7 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
       output: (
         <div className="pl-3 border-l-2 border-emerald-500/40 text-[11px] space-y-0.5">
           <p className="text-emerald-400 font-medium">✓ STOMP WebSocket: 200 OK &mdash; latency: 1.8ms (zero loss)</p>
-          <p className="text-neutral-500 text-[10px]">Connected to wss://runtime.shubham.io/v1/telemetry · TLS 1.3</p>
+          <p className="text-neutral-500 text-[10px]">Connected to wss://telemetry.shubham.io/v1/stream</p>
         </div>
       )
     }

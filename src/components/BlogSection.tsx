@@ -47,7 +47,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           <div>
             <FadeIn delay={20}>
               <div className="text-xs font-mono text-emerald-400 font-medium tracking-wider uppercase mb-2">
-                06. Technical Writing & Field Notes
+                05. Technical Writing & Field Notes
               </div>
             </FadeIn>
             <TextReveal delay={60} distance={40}>

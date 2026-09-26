@@ -94,8 +94,8 @@ public class LRUCache {
     public LRUCache(int capacity) {
         this.capacity = capacity;
         this.map = new HashMap<>(capacity);
-        this.head = new Node(0, 0); // Sentinel head
-        this.tail = new Node(0, 0); // Sentinel tail
+        this.head = new Node(0, 0);
+        this.tail = new Node(0, 0);
         head.next = tail;
         tail.prev = head;
     }
@@ -533,12 +533,12 @@ public class BoundedBlockingQueue {
         lock.lock();
         try {
             while (size == capacity) {
-                notFull.await(); // Block producer until slot opens
+                notFull.await();
             }
             buffer[tail] = element;
             tail = (tail + 1) % capacity;
             size++;
-            notEmpty.signal(); // Notify waiting consumers
+            notEmpty.signal();
         } finally {
             lock.unlock();
         }
@@ -548,12 +548,12 @@ public class BoundedBlockingQueue {
         lock.lock();
         try {
             while (size == 0) {
-                notEmpty.await(); // Block consumer until item is pushed
+                notEmpty.await();
             }
             int element = buffer[head];
             head = (head + 1) % capacity;
             size--;
-            notFull.signal(); // Notify waiting producers
+            notFull.signal();
             return element;
         } finally {
             lock.unlock();
@@ -695,10 +695,7 @@ class CoinChangeOptimizer:
       ]
     },
     url: 'https://leetcode.com/problems/implement-trie-prefix-tree/',
-    solutionCode: `/**
- * Prefix Trie for High-Performance Routing and Symbol Indexing
- */
-public class Trie {
+    solutionCode: `public class Trie {
     private static class TrieNode {
         private final TrieNode[] children = new TrieNode[26];
         private boolean isEndOfWord = false;
