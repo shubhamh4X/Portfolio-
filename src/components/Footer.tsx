@@ -5,10 +5,9 @@ import { FadeIn } from './FadeIn';
 
 interface FooterProps {
   darkMode: boolean;
-  onOpenResume: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume }) => {
+export const Footer: React.FC<FooterProps> = ({ darkMode }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -45,9 +44,6 @@ export const Footer: React.FC<FooterProps> = ({ darkMode, onOpenResume }) => {
               <a href="#insights" className="hover:text-emerald-400 transition-colors">
                 Insights
               </a>
-              <button onClick={onOpenResume} className="hover:text-emerald-400 transition-colors cursor-pointer">
-                Resume / CV
-              </button>
               <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
                 Contact (LinkedIn)
               </a>
