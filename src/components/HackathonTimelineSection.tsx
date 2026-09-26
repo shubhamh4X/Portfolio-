@@ -36,7 +36,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
     <section id="hackathons" className="py-12 md:py-16 relative">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-6">
           <div>
             <FadeIn delay={20}>
@@ -57,7 +56,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
             </FadeIn>
           </div>
 
-          
           <div className="flex items-center gap-3 p-2 rounded-xl border border-neutral-800 bg-neutral-900/80 backdrop-blur-md self-start md:self-auto">
             <div className="flex items-center gap-2 px-3 py-1.5 border-r border-neutral-800">
               <Trophy className="w-4 h-4 text-amber-400" />
@@ -80,7 +78,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
           </div>
         </div>
 
-        
         <div className="space-y-6">
           {HACKATHON_CHRONOLOGY.map((hack, index) => {
             const isExpanded = expandedHackId === hack.id;
@@ -97,13 +94,11 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                     : 'border-neutral-800 bg-neutral-900/50 hover:border-neutral-700'
                 }`}
               >
-                
                 <div 
                   onClick={() => toggleExpand(hack.id)}
                   className="p-5 sm:p-7 flex flex-col lg:flex-row lg:items-center justify-between gap-5 cursor-pointer select-none"
                 >
                   <div className="space-y-2">
-                    
                     
                     <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
                       <span className={`px-2.5 py-0.5 rounded font-semibold border inline-flex items-center gap-1.5 ${
@@ -133,7 +128,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                       </span>
                     </div>
 
-                    
                     <div>
                       <h3 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-neutral-100 mt-1">
                         {hack.projectTitle}
@@ -143,13 +137,11 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                       </p>
                     </div>
 
-                    
                     <p className="text-xs sm:text-sm text-neutral-300 max-w-4xl line-clamp-2 mt-2">
                       {hack.summary}
                     </p>
                   </div>
 
-                  
                   <div className="flex items-center gap-5 self-end lg:self-auto shrink-0">
                     {hack.metrics && (
                       <div className="hidden sm:flex items-center gap-3">
@@ -171,13 +163,10 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                   </div>
                 </div>
 
-                
                 {isExpanded && (
                   <div className="p-5 sm:p-8 border-t border-neutral-800 bg-neutral-950/90 space-y-6 animate-in fade-in duration-200">
                     
-                    
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                      
                       
                       <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/60 space-y-2">
                         <div className="text-xs font-mono text-rose-400 font-semibold uppercase flex items-center gap-1.5">
@@ -188,7 +177,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                         </p>
                       </div>
 
-                      
                       <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/60 space-y-2">
                         <div className="text-xs font-mono text-emerald-400 font-semibold uppercase flex items-center gap-1.5">
                           <Compass className="w-3.5 h-3.5" />
@@ -201,7 +189,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
 
                     </div>
 
-                    
                     <div className="p-5 rounded-xl border border-emerald-500/30 bg-emerald-950/15 space-y-2">
                       <div className="text-xs font-mono text-emerald-400 font-semibold uppercase flex items-center gap-2">
                         <Sparkles className="w-4 h-4 text-emerald-400" />
@@ -212,9 +199,7 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                       </p>
                     </div>
 
-                    
                     <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-neutral-800/80">
-                      
                       
                       <div className="flex flex-wrap items-center gap-1.5">
                         <span className="text-xs font-mono text-neutral-500 mr-1">Sprint Stack:</span>
@@ -228,7 +213,6 @@ export const HackathonTimelineSection: React.FC<HackathonTimelineSectionProps> =
                         ))}
                       </div>
 
-                      
                       <div className="flex items-center gap-3">
                         {hack.githubUrl && (
                           <a

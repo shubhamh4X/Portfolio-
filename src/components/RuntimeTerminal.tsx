@@ -51,7 +51,6 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
   const terminalBodyRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  
   const getInitialHistory = (): CommandHistoryItem[] => [
     {
       id: 'init-1',
@@ -89,7 +88,7 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
       output: (
         <div className="pl-3 border-l-2 border-emerald-500/40 text-[11px] space-y-0.5">
           <p className="text-emerald-400 font-medium">✓ STOMP WebSocket: 200 OK &mdash; latency: 1.8ms (zero loss)</p>
-          <p className="text-neutral-500 text-[10px]">Connected to wss:
+          <p className="text-neutral-500 text-[10px]">Connected to wss://runtime.shubham.io/v1/telemetry · TLS 1.3</p>
         </div>
       )
     }
@@ -99,14 +98,12 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
     setHistory(getInitialHistory());
   }, []);
 
-  
   useEffect(() => {
     if (terminalBodyRef.current) {
       terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
     }
   }, [history, isMatrixActive]);
 
-  
   const handleTerminalClick = () => {
     inputRef.current?.focus();
   };
@@ -115,7 +112,6 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
     const trimmed = cmdStr.trim();
     if (!trimmed) return;
 
-    
     setCommandHistoryList(prev => [...prev, trimmed]);
     setHistoryIndex(-1);
 
@@ -386,7 +382,6 @@ Java Backend Eng.`}
                 <p><span className="text-cyan-400">Memory:</span> 38.2 MB / 64 GB (Zero-copy Piece Tree)</p>
               </div>
             </div>
-            
             <div className="flex items-center gap-1 pt-1">
               <span className="w-3 h-2 bg-neutral-900 rounded-xs" />
               <span className="w-3 h-2 bg-rose-500 rounded-xs" />
@@ -548,7 +543,6 @@ Java Backend Eng.`}
       }
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      
       const val = inputVal.toLowerCase().trim();
       if (!val) return;
       const match = AVAILABLE_COMMANDS.find(cmd => cmd.toLowerCase().startsWith(val));
@@ -568,30 +562,25 @@ Java Backend Eng.`}
             : 'bg-white/95 border-neutral-300 text-neutral-800 shadow-xl hover:border-neutral-400'
         }`}
       >
-        
         <div className="flex items-center justify-between pb-3.5 border-b border-neutral-800/80 mb-3 select-none">
           <div className="flex items-center gap-2">
-            
             <button 
               type="button"
               onClick={(e) => { e.stopPropagation(); executeCommand('reset'); }} 
               title="Reset terminal (reset)"
               className="w-3 h-3 rounded-full bg-rose-500/80 hover:bg-rose-500 transition-colors cursor-pointer"
             />
-            
             <button 
               type="button"
               onClick={(e) => { e.stopPropagation(); executeCommand('clear'); }} 
               title="Clear buffer (clear)"
               className="w-3 h-3 rounded-full bg-amber-500/80 hover:bg-amber-500 transition-colors cursor-pointer"
             />
-            
             <span 
               className="w-3 h-3 rounded-full bg-emerald-500/80"
             />
           </div>
 
-          
           <div className="flex items-center gap-1.5 text-[11px] font-mono text-neutral-400">
             <Terminal className="w-3.5 h-3.5 text-emerald-400" />
             <span className="font-semibold text-neutral-200">runtime.shubham.io</span>
@@ -601,18 +590,15 @@ Java Backend Eng.`}
             </span>
           </div>
 
-          
           <div className="w-12 flex justify-end" />
         </div>
 
-        
         {isMatrixActive && (
           <div className="mb-2 p-2 rounded bg-emerald-950/30 border border-emerald-500/30 text-emerald-400 font-mono text-[10px] animate-pulse overflow-hidden select-none">
             01010011 01001000 01010101 01000010 01001000 01000001 01001101 &mdash; STREAMING HIGH CONCURRENCY REALTIME MESH...
           </div>
         )}
 
-        
         <div 
           ref={terminalBodyRef}
           className="max-h-[380px] overflow-y-auto space-y-3 font-mono text-xs leading-relaxed pr-1 scrollbar-thin scrollbar-thumb-neutral-800"
@@ -630,7 +616,6 @@ Java Backend Eng.`}
             </div>
           ))}
 
-          
           <div className="pt-1 flex items-center gap-2 text-xs">
             <div className="flex items-center text-emerald-400 font-bold select-none shrink-0 font-mono">
               <span>$</span>
@@ -652,7 +637,6 @@ Java Backend Eng.`}
           </div>
         </div>
 
-        
         <div className="mt-3 pt-3 border-t border-neutral-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs select-none">
           <div className="flex items-center flex-wrap gap-1 text-[10px] font-mono text-neutral-400">
             <span className="text-neutral-500 mr-0.5">run:</span>

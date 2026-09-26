@@ -39,7 +39,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
     <section id="projects" className="pt-6 pb-8 md:pt-8 md:pb-12 relative">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-6">
           <div>
             <FadeIn delay={20}>
@@ -59,7 +58,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             </FadeIn>
           </div>
 
-          
           <FadeIn delay={120}>
             <div className="relative w-full md:w-72">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500" />
@@ -78,7 +76,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           </FadeIn>
         </div>
 
-        
         <FadeIn delay={140}>
           <div className="flex items-center gap-1.5 overflow-x-auto pb-4 mb-8 scrollbar-none">
             {categories.map((cat) => (
@@ -99,7 +96,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           </div>
         </FadeIn>
 
-        
         <FadeIn delay={180}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredProjects.map((project) => (
@@ -115,7 +111,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   : 'bg-white hover:bg-neutral-50 border-neutral-200 hover:border-emerald-500/40 shadow-sm hover:shadow-xl'
               }`}
             >
-              
               <div className={`relative h-44 sm:h-48 w-full overflow-hidden border-b ${
                 darkMode ? 'bg-neutral-950 border-neutral-800/80' : 'bg-neutral-100 border-neutral-200'
               }`}>
@@ -132,10 +127,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </div>
                 )}
 
-                
                 <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent pointer-events-none" />
 
-                
                 <div className="absolute top-3 left-3">
                   <span className="px-2.5 py-1 text-[11px] font-mono font-medium rounded-md bg-neutral-950/85 text-emerald-400 border border-emerald-500/30 backdrop-blur-md">
                     {project.categoryLabel}
@@ -143,10 +136,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
               </div>
 
-              
               <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
-                  
                   
                   <div className="flex flex-wrap items-center gap-2 text-xs text-neutral-400 font-mono">
                     <span className="text-emerald-500 font-medium">{project.role}</span>
@@ -171,7 +162,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     )}
                   </div>
 
-                  
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold font-display tracking-tight text-neutral-100 group-hover:text-emerald-400 transition-colors">
                       {project.title}
@@ -181,15 +171,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     </p>
                   </div>
 
-                  
                   <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed line-clamp-2">
                     {project.summary}
                   </p>
                 </div>
 
-                
                 <div className="pt-3 border-t border-neutral-800/80 space-y-3">
-                  
                   <div className="flex flex-wrap gap-1.5 items-center">
                     {project.stack.slice(0, 4).map((tech) => (
                       <span
@@ -206,7 +193,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     )}
                   </div>
 
-                  
                   <div className="flex items-center justify-between text-xs text-emerald-400 font-mono pt-1 group-hover:text-emerald-300 transition-colors">
                     <span className="flex items-center gap-1.5 font-medium">
                       <Layers className="w-3.5 h-3.5 text-emerald-400" />

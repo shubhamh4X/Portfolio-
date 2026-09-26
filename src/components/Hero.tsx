@@ -62,7 +62,6 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <section id="home" className="relative pt-6 pb-6 md:pt-8 md:pb-10 overflow-hidden">
-      
       <div 
         className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] pointer-events-none opacity-20 blur-[120px] rounded-full"
         style={{
@@ -72,7 +71,6 @@ export const Hero: React.FC<HeroProps> = ({
       />
 
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10">
-        
         
         <FadeIn delay={40}>
           <div className="flex items-center gap-2.5 text-xs text-neutral-400 mb-6">
@@ -86,9 +84,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </FadeIn>
 
-        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-14 items-start">
-          
           
           <div className="lg:col-span-7 xl:col-span-8 space-y-6">
             <TextReveal delay={60} distance={40}>
@@ -111,7 +107,6 @@ export const Hero: React.FC<HeroProps> = ({
               </p>
             </FadeIn>
 
-            
             <FadeIn delay={160}>
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <a
@@ -124,7 +119,6 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
             </FadeIn>
 
-            
             <FadeIn delay={200}>
               <div className="flex flex-wrap items-center gap-5 pt-4 text-sm text-neutral-400">
                 <span className="text-xs uppercase tracking-wider text-neutral-500 font-mono">Connect</span>
@@ -162,7 +156,6 @@ export const Hero: React.FC<HeroProps> = ({
             </FadeIn>
           </div>
 
-          
           <div className="lg:col-span-5 xl:col-span-4">
             <FadeIn delay={140}>
               <RuntimeTerminal
@@ -174,7 +167,6 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        
         <FadeIn delay={180}>
           <div className={`mt-10 pt-6 md:mt-12 md:pt-6 border-t ${darkMode ? 'border-neutral-800/80' : 'border-neutral-200'}`}>
             <div className="flex items-center justify-between mb-4">
@@ -203,7 +195,6 @@ export const Hero: React.FC<HeroProps> = ({
                     }`}
                   >
                     <div>
-                      
                       <div className="flex items-center justify-between gap-2 mb-3.5">
                         <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${
                           darkMode ? 'bg-neutral-800/80' : 'bg-neutral-100'
@@ -215,20 +206,17 @@ export const Hero: React.FC<HeroProps> = ({
                         </span>
                       </div>
 
-                      
                       <h3 className={`text-sm font-bold tracking-tight mb-2 group-hover:text-emerald-400 transition-colors ${
                         darkMode ? 'text-neutral-100' : 'text-neutral-900'
                       }`}>
                         {pillar.title}
                       </h3>
 
-                      
                       <p className="text-xs text-neutral-400 leading-relaxed mb-4">
                         {pillar.description}
                       </p>
                     </div>
 
-                    
                     <div className={`pt-3 border-t text-[11px] font-mono flex items-center gap-1.5 ${
                       darkMode ? 'border-neutral-800/80 text-neutral-400' : 'border-neutral-100 text-neutral-500'
                     }`}>

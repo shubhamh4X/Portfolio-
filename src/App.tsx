@@ -1,5 +1,4 @@
 
-
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -44,7 +43,6 @@ export default function App() {
         return [];
       }
     }
-    
     return [
       {
         id: 'INQ-9102',
@@ -65,12 +63,10 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  
   useEffect(() => {
     localStorage.setItem('shubham_portfolio_inquiries', JSON.stringify(inquiries));
   }, [inquiries]);
 
-  
   useEffect(() => {
     localStorage.setItem('shubham_portfolio_articles', JSON.stringify(articles));
   }, [articles]);
@@ -118,9 +114,7 @@ export default function App() {
     <div className={`relative min-h-screen transition-colors duration-200 selection:bg-emerald-500 selection:text-neutral-950 ${
       darkMode ? 'bg-neutral-950 text-neutral-100' : 'bg-[#FAFAF9] text-neutral-900'
     }`}>
-      
       <CyberneticBackground darkMode={darkMode} />
-      
       
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-lg bg-neutral-900 border border-emerald-500/40 text-emerald-400 text-xs font-mono shadow-2xl animate-in slide-in-from-bottom-2 duration-200 flex items-center gap-2">
@@ -129,48 +123,40 @@ export default function App() {
         </div>
       )}
 
-      
       <Navbar
         darkMode={darkMode}
         onToggleDarkMode={() => setDarkMode(!darkMode)}
       />
 
       <main>
-        
         <Hero
           darkMode={darkMode}
           onOpenResume={() => setIsResumeOpen(true)}
           onToggleDarkMode={() => setDarkMode(!darkMode)}
         />
 
-        
         <ProjectsSection
           darkMode={darkMode}
           onSelectProject={(project) => setSelectedProject(project)}
         />
 
-        
         <ExperienceSection
           darkMode={darkMode}
           onOpenResume={() => setIsResumeOpen(true)}
         />
 
-        
         <GitHubSection
           darkMode={darkMode}
         />
 
-        
         <HackathonTimelineSection
           darkMode={darkMode}
         />
 
-        
         <DsaTelemetrySection
           darkMode={darkMode}
         />
 
-        
         <BlogSection
           darkMode={darkMode}
           articles={articles}
@@ -178,13 +164,11 @@ export default function App() {
         />
       </main>
 
-      
       <Footer
         darkMode={darkMode}
         onOpenResume={() => setIsResumeOpen(true)}
       />
 
-      
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

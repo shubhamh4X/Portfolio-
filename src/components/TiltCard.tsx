@@ -11,7 +11,6 @@ interface TiltCardProps {
   preserve3d?: boolean;
 }
 
-
 export const TiltCard: React.FC<TiltCardProps> = ({
   children,
   className = '',
@@ -39,11 +38,9 @@ export const TiltCard: React.FC<TiltCardProps> = ({
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    
     const rotateX = ((y - centerY) / centerY) * -maxTilt;
     const rotateY = ((x - centerX) / centerX) * maxTilt;
 
-    
     const glareX = (x / rect.width) * 100;
     const glareY = (y / rect.height) * 100;
 
@@ -78,7 +75,6 @@ export const TiltCard: React.FC<TiltCardProps> = ({
       style={tiltStyle}
       className={`relative will-change-transform transform-gpu overflow-hidden ${onClick ? 'cursor-pointer select-none' : ''} ${className}`}
     >
-      
       <div
         className="pointer-events-none absolute inset-0 z-20 transition-opacity duration-300"
         style={{

@@ -4,7 +4,6 @@ interface CyberneticBackgroundProps {
   darkMode: boolean;
 }
 
-
 export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ darkMode }) => {
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
   const [isMounted, setIsMounted] = useState(false);
@@ -15,7 +14,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
   useEffect(() => {
     setIsMounted(true);
 
-    
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight * 0.3;
     targetPosRef.current = { x: centerX, y: centerY };
@@ -32,7 +30,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
       }
     };
 
-    
     const updatePosition = () => {
       const dx = targetPosRef.current.x - currentPosRef.current.x;
       const dy = targetPosRef.current.y - currentPosRef.current.y;
@@ -66,7 +63,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
       className="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-700 select-none"
       aria-hidden="true"
     >
-      
       <div
         className="absolute inset-0 transition-opacity duration-500"
         style={{
@@ -78,7 +74,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
         }}
       />
 
-      
       {isMounted && (
         <div
           className="absolute inset-0 transition-opacity duration-300"
@@ -94,7 +89,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
         />
       )}
 
-      
       {isMounted && (
         <div
           className="absolute inset-0 transition-opacity duration-300"
@@ -106,7 +100,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
         />
       )}
 
-      
       <div 
         className={`absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-[140px] pointer-events-none transition-opacity duration-1000 ${
           darkMode ? 'bg-emerald-500/[0.04]' : 'bg-emerald-500/[0.03]'
@@ -119,7 +112,6 @@ export const CyberneticBackground: React.FC<CyberneticBackgroundProps> = ({ dark
         }`} 
       />
 
-      
       <div 
         className={`absolute inset-0 pointer-events-none ${
           darkMode

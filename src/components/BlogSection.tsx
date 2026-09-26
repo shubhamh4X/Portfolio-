@@ -43,7 +43,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
     <section id="insights" className="pt-6 pb-8 md:pt-8 md:pb-12 relative">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-6">
           <div>
             <FadeIn delay={20}>
@@ -63,7 +62,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             </FadeIn>
           </div>
 
-          
           <FadeIn delay={120}>
             <div className="relative w-full md:w-72">
               <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500" />
@@ -82,7 +80,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           </FadeIn>
         </div>
 
-        
         <FadeIn delay={140}>
           <div className="flex items-center gap-1.5 overflow-x-auto pb-4 mb-8 scrollbar-none">
             {categories.map((cat) => (
@@ -103,7 +100,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           </div>
         </FadeIn>
 
-        
         <FadeIn delay={180}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredArticles.map((article) => (
@@ -122,7 +118,6 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             >
               <div className="space-y-4">
                 
-                
                 <div className="flex items-center gap-2 text-xs font-mono text-neutral-400">
                   <span className="text-emerald-400 font-semibold">{article.category}</span>
                   <span aria-hidden="true" className="text-neutral-600">·</span>
@@ -137,18 +132,15 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
                   </span>
                 </div>
 
-                
                 <h3 className="text-xl sm:text-2xl font-bold font-display tracking-tight text-neutral-100 group-hover:text-emerald-400 transition-colors leading-snug">
                   {article.title}
                 </h3>
 
-                
                 <p className="text-sm text-neutral-400 leading-relaxed line-clamp-3">
                   {article.excerpt}
                 </p>
               </div>
 
-              
               <div className="pt-6 mt-6 border-t border-neutral-800/80 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="flex items-center gap-1 text-xs font-mono text-neutral-400">

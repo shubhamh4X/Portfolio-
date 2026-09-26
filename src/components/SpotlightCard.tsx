@@ -9,11 +9,10 @@ interface SpotlightCardProps {
   onClick?: () => void;
 }
 
-
 export const SpotlightCard: React.FC<SpotlightCardProps> = ({
   children,
   className = '',
-  spotlightColor = 'rgba(52, 211, 153, 0.12)', 
+  spotlightColor = 'rgba(52, 211, 153, 0.12)', // Subtle emerald glow
   spotlightSize = 350,
   darkMode = true,
   onClick,
@@ -40,7 +39,6 @@ export const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onClick={onClick}
       className={`relative overflow-hidden apple-transition apple-card-hover ${className}`}
     >
-      
       <div
         className="pointer-events-none absolute -inset-px transition-opacity apple-transition z-10"
         style={{

@@ -43,7 +43,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        
         <div className={`p-4 px-6 border-b flex items-center justify-between shrink-0 ${
           darkMode ? 'border-neutral-800 bg-neutral-950/60' : 'border-neutral-200 bg-neutral-50'
         }`}>
@@ -79,7 +78,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
           </div>
         </div>
 
-        
         {inquiries.length === 0 ? (
           <div className="p-12 text-center space-y-3 font-mono">
             <Mail className="w-10 h-10 text-neutral-600 mx-auto" />
@@ -90,7 +88,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-12 flex-1 overflow-hidden min-h-[420px]">
-            
             <div className={`md:col-span-5 border-r overflow-y-auto ${
               darkMode ? 'border-neutral-800 bg-neutral-950/40' : 'border-neutral-200 bg-neutral-50'
             }`}>
@@ -124,7 +121,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
               ))}
             </div>
 
-            
             <div className="md:col-span-7 p-6 overflow-y-auto space-y-6">
               {selectedInquiry ? (
                 <>
@@ -176,7 +172,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
                     </div>
                   </div>
 
-                  
                   <div className="grid grid-cols-3 gap-3 font-mono text-xs">
                     <div className="p-3 rounded-lg border border-neutral-800 bg-neutral-950">
                       <span className="text-[10px] text-neutral-500 uppercase block">Focus</span>
@@ -192,7 +187,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
                     </div>
                   </div>
 
-                  
                   <div className="space-y-2">
                     <span className="text-xs font-mono text-neutral-500 uppercase tracking-wider block">
                       Client Brief / Message
@@ -202,7 +196,6 @@ export const InboxModal: React.FC<InboxModalProps> = ({
                     </div>
                   </div>
 
-                  
                   <div className="pt-4 flex items-center justify-end gap-3 border-t border-neutral-800">
                     <a
                       href={`mailto:${selectedInquiry.email}?subject=Re:%20${encodeURIComponent(selectedInquiry.projectType)}%20[${selectedInquiry.id}]&body=Hi%20${encodeURIComponent(selectedInquiry.name)},%0A%0AThank%20you%20for%20reaching%20out%20regarding%20${encodeURIComponent(selectedInquiry.projectType)}.%0A%0ABest%20regards,%0AShubham`}

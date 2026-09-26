@@ -12,11 +12,9 @@ interface ProjectModalProps {
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, darkMode }) => {
   const [activeTab, setActiveTab] = useState<'architecture' | 'timeline' | 'simulation' | 'metrics' | 'challenges'>('architecture');
   
-  
   const [simRunning, setSimRunning] = useState(false);
   const [simEvents, setSimEvents] = useState<string[]>([]);
 
-  
   useEffect(() => {
     if (project) {
       setActiveTab('architecture');
@@ -25,7 +23,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
     }
   }, [project?.id]);
 
-  
   useEffect(() => {
     if (!project) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -37,7 +34,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [project, onClose]);
 
-  
   useEffect(() => {
     if (project) {
       const originalOverflow = document.body.style.overflow;
@@ -102,7 +98,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        
         <div className={`p-6 border-b flex items-start justify-between ${
           darkMode ? 'border-neutral-800 bg-neutral-900/80' : 'border-neutral-200 bg-neutral-50/80'
         }`}>
@@ -148,7 +143,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
           </button>
         </div>
 
-        
         <div className={`px-6 py-2 border-b flex items-center gap-2 overflow-x-auto scrollbar-none ${
           darkMode ? 'border-neutral-800 bg-neutral-950/40' : 'border-neutral-200 bg-neutral-100/60'
         }`}>
@@ -214,14 +208,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
           </button>
         </div>
 
-        
         <div className="p-6 max-h-[72vh] overflow-y-auto space-y-7">
-          
           
           {activeTab === 'architecture' && (
             <div className="space-y-6">
 
-              
               {project.imageUrl && (
                 <div className="space-y-2">
                   <div className="rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950 shadow-2xl relative">
@@ -241,7 +232,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 </div>
               )}
 
-              
               <div className="space-y-3">
                 <h3 className="text-sm font-semibold text-neutral-200 uppercase tracking-wider font-mono flex items-center gap-2">
                   <Layers className="w-4 h-4 text-emerald-400" />
@@ -255,7 +245,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 </p>
               </div>
 
-              
               {project.keyFeatures && (
                 <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-950/70 space-y-3">
                   <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400">
@@ -272,7 +261,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 </div>
               )}
 
-              
               {project.architectureHighlights && (
                 <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-950/70 space-y-3">
                   <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">
@@ -291,7 +279,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 </div>
               )}
 
-              
               {project.developmentLifecycle && (
                 <div className="space-y-2.5">
                   <div className="flex items-center justify-between">
@@ -311,7 +298,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 </div>
               )}
 
-              
               <div>
                 <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-3 font-mono">
                   Engineered With
@@ -330,13 +316,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
             </div>
           )}
 
-          
           {activeTab === 'timeline' && project.developmentLifecycle && (
             <div className="space-y-6">
-              
               <ProjectTimeline lifecycle={project.developmentLifecycle} darkMode={darkMode} />
 
-              
               <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-950/70 space-y-4">
                 <div className="flex items-center justify-between pb-3 border-b border-neutral-800">
                   <div className="flex items-center gap-2">
@@ -379,7 +362,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
             </div>
           )}
 
-          
           {activeTab === 'simulation' && project.hasInteractiveSimulation && (
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -402,7 +384,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 </button>
               </div>
 
-              
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-xl border border-neutral-800 bg-neutral-950 font-mono">
                 {project.id === 'zenx-code' ? (
                   <>
@@ -467,7 +448,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
                 )}
               </div>
 
-              
               <div className="p-3.5 rounded-lg border border-neutral-800 bg-black font-mono text-xs text-emerald-400/90 space-y-1.5 min-h-[140px]">
                 <div className="text-neutral-500 text-[10px] pb-1 border-b border-neutral-800/80 flex items-center justify-between">
                   <span>EXECUTION LOG</span>
@@ -486,7 +466,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
             </div>
           )}
 
-          
           {activeTab === 'metrics' && (
             <div className="space-y-4">
               <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-2 font-mono">
@@ -508,7 +487,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
             </div>
           )}
 
-          
           {activeTab === 'challenges' && (
             <div className="space-y-4">
               <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider mb-2 font-mono">
@@ -532,7 +510,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, da
           )}
         </div>
 
-        
         <div className={`p-4 sm:p-6 border-t flex items-center justify-between ${
           darkMode ? 'border-neutral-800 bg-neutral-950/80' : 'border-neutral-200 bg-neutral-50'
         }`}>

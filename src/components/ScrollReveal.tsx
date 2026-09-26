@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; 
-  duration?: number; 
-  distance?: number; 
+  delay?: number; // in milliseconds
+  duration?: number; // in milliseconds
+  distance?: number; // in pixels (offset from left)
   direction?: 'left' | 'right' | 'up' | 'down';
   as?: React.ElementType;
   once?: boolean;
@@ -31,11 +31,9 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     const element = ref.current;
     if (!element) return;
 
-    
     const rect = element.getBoundingClientRect();
     const inInitialViewport = rect.top < window.innerHeight && rect.bottom > 0;
     if (inInitialViewport) {
-      
       const timer = setTimeout(() => {
         setIsVisible(true);
       }, delay);
@@ -50,7 +48,6 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
             observer.unobserve(element);
           }
         } else if (!once) {
-          
           if (entry.boundingClientRect.top > window.innerHeight) {
             setIsVisible(false);
           }
@@ -69,7 +66,6 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     };
   }, [delay, once]);
 
-  
   const getTransform = () => {
     if (isVisible) return 'translate3d(0, 0, 0)';
     switch (direction) {
@@ -93,7 +89,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     transitionProperty: 'opacity, transform, filter',
     transitionDuration: `${duration}ms`,
     transitionDelay: `${delay}ms`,
-    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)', 
+    transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)', // Smooth easeOutExpo
     willChange: 'opacity, transform, filter',
   };
 

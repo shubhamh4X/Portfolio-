@@ -21,7 +21,6 @@ interface ProjectTimelineProps {
 }
 
 export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, darkMode, compact = false }) => {
-  
   const activePhaseIndex = lifecycle.phases.findIndex(
     p => p.status === 'in-progress' || (p.status === 'completed' && p.name.toLowerCase().includes('maintenance'))
   );
@@ -83,7 +82,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
           </span>
         </div>
 
-        
         <div className="grid grid-cols-5 gap-1.5 sm:gap-2">
           {lifecycle.phases.map((phase, idx) => {
             const isCompleted = phase.status === 'completed';
@@ -118,7 +116,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
     <div className={`rounded-xl border overflow-hidden ${
       darkMode ? 'bg-neutral-950/70 border-neutral-800' : 'bg-neutral-50/90 border-neutral-200'
     }`}>
-      
       <div className={`px-5 py-3.5 border-b flex flex-wrap items-center justify-between gap-3 ${
         darkMode ? 'border-neutral-800 bg-neutral-900/60' : 'border-neutral-200 bg-neutral-100/70'
       }`}>
@@ -149,10 +146,8 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
         </div>
       </div>
 
-      
       <div className="p-4 sm:p-5 border-b border-neutral-800/80">
         <div className="relative">
-          
           <div className="absolute top-[24px] left-[10%] right-[10%] h-0.5 bg-neutral-800 -z-0 hidden sm:block pointer-events-none">
             <div 
               className="h-full bg-gradient-to-r from-emerald-500 via-emerald-400 to-amber-400 transition-all duration-500"
@@ -160,7 +155,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
             />
           </div>
 
-          
           <div className="grid grid-cols-1 sm:grid-cols-5 gap-2.5 sm:gap-2 relative z-10">
             {lifecycle.phases.map((phase, idx) => {
               const isCompleted = phase.status === 'completed';
@@ -183,7 +177,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
                         : 'hover:bg-neutral-100 border border-transparent hover:border-neutral-300'
                   }`}
                 >
-                  
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform group-hover:scale-105 ${
                     isCompleted
                       ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
@@ -202,7 +195,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
                     )}
                   </div>
 
-                  
                   <div className="w-full min-w-0 flex-1 sm:flex-initial flex flex-col items-start sm:items-center overflow-hidden">
                     <span className={`text-[10px] font-mono uppercase tracking-wider font-semibold block ${
                       isCompleted 
@@ -234,7 +226,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
         </div>
       </div>
 
-      
       <div className="p-5 sm:p-6 space-y-4">
         <div className="flex flex-wrap items-start justify-between gap-3 pb-3 border-b border-neutral-800/80">
           <div>
@@ -267,7 +258,6 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
             )}
           </div>
 
-          
           <div className="flex items-center gap-1.5 self-center">
             <button
               onClick={() => setSelectedPhaseIndex(prev => Math.max(0, prev - 1))}
@@ -293,12 +283,10 @@ export const ProjectTimeline: React.FC<ProjectTimelineProps> = ({ lifecycle, dar
           </div>
         </div>
 
-        
         <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed">
           {selectedPhase.description}
         </p>
 
-        
         {selectedPhase.deliverables && selectedPhase.deliverables.length > 0 && (
           <div className="pt-2">
             <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-400 block mb-2">

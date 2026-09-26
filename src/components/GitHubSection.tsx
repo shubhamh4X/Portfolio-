@@ -15,17 +15,14 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [copiedRepo, setCopiedRepo] = useState<string | null>(null);
   
-  
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
   const [sortBy, setSortBy] = useState<'stars' | 'updated' | 'name'>('stars');
 
-  
   useEffect(() => {
     syncSpotlightRepos();
   }, []);
 
-  
   const syncSpotlightRepos = async () => {
     setIsLoading(true);
     try {
@@ -36,14 +33,12 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
       });
 
       if (!response.ok) {
-        
         setRepos(GITHUB_REPOS);
         return;
       }
 
       const data = await response.json();
       if (Array.isArray(data) && data.length > 0) {
-        
         const updated = GITHUB_REPOS.map((baseline) => {
           const liveMatch = data.find((item: any) => 
             item.name.toLowerCase() === baseline.name.toLowerCase() ||
@@ -69,7 +64,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
         setRepos(GITHUB_REPOS);
       }
     } catch {
-      
       setRepos(GITHUB_REPOS);
     } finally {
       setIsLoading(false);
@@ -100,7 +94,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
     setTimeout(() => setCopiedRepo(null), 2000);
   };
 
-  
   const availableLanguages = useMemo(() => {
     const langs = new Set<string>();
     repos.forEach((r) => {
@@ -109,12 +102,10 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
     return Array.from(langs);
   }, [repos]);
 
-  
   const totalStars = useMemo(() => {
     return repos.reduce((acc, curr) => acc + curr.stars, 0);
   }, [repos]);
 
-  
   const filteredRepos = useMemo(() => {
     return repos
       .filter((r) => {
@@ -136,7 +127,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
     <section id="github" className="pt-6 pb-8 md:pt-8 md:pb-12 relative">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
           <div>
             <FadeIn delay={20}>
@@ -156,7 +146,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
             </FadeIn>
           </div>
 
-          
           <FadeIn delay={120}>
             <div className="flex items-center gap-3">
               <button
@@ -183,7 +172,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
           </FadeIn>
         </div>
 
-        
         <FadeIn delay={140}>
           <div className={`mb-6 p-4 rounded-xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-colors ${
             darkMode ? 'bg-neutral-900/60 border-neutral-800' : 'bg-white border-neutral-200 shadow-sm'
@@ -227,7 +215,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
             </div>
         </FadeIn>
 
-        
         <FadeIn delay={180}>
           <div className={`p-4 rounded-xl border mb-8 flex flex-wrap items-center justify-between gap-4 font-mono text-xs ${
             darkMode ? 'bg-neutral-900/40 border-neutral-800' : 'bg-neutral-50 border-neutral-200'
@@ -254,10 +241,8 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
           </div>
         </FadeIn>
 
-        
         <FadeIn delay={200}>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-6">
-            
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
               <button
                 onClick={() => setSelectedLanguage('all')}
@@ -288,7 +273,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
               ))}
             </div>
 
-            
             <div className="flex items-center gap-2">
               <div className="relative flex-1 sm:w-48">
                 <Search className="w-3.5 h-3.5 absolute left-2.5 top-1/2 -translate-y-1/2 text-neutral-500" />
@@ -318,7 +302,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
           </div>
         </FadeIn>
 
-        
         <FadeIn delay={220}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredRepos.map((repo) => (
@@ -334,7 +317,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
               }`}
             >
                 <div>
-                  
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
                       <Github className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -359,12 +341,10 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
                     </a>
                   </div>
 
-                  
                   <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-4 min-h-[44px]">
                     {repo.description}
                   </p>
 
-                  
                   {repo.topics && repo.topics.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mb-5">
                       {repo.topics.map((topic) => (
@@ -379,9 +359,7 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
                   )}
                 </div>
 
-                
                 <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between text-xs text-neutral-400 font-mono">
-                  
                   <div className="flex items-center gap-2">
                     <span
                       className="w-2.5 h-2.5 rounded-full inline-block"
@@ -390,7 +368,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
                     <span className="font-semibold text-neutral-300">{repo.language}</span>
                   </div>
 
-                  
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1 hover:text-amber-400 transition-colors tabular-nums">
                       <Star className="w-3.5 h-3.5 fill-amber-400/80 text-amber-400" />
@@ -402,7 +379,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
                       <span>{repo.forks.toLocaleString()}</span>
                     </span>
 
-                    
                     <button
                       onClick={() => handleCopyClone(repo.name, repo.htmlUrl)}
                       title="Copy git clone command"
@@ -433,7 +409,6 @@ export const GitHubSection: React.FC<GitHubSectionProps> = ({ darkMode }) => {
           </div>
         )}
 
-        
         <div className="mt-10 text-center">
           <a
             href="https://github.com/shubhamh4X?tab=repositories"

@@ -30,7 +30,6 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
     <section id="dsa-telemetry" className="py-12 md:py-16 relative">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
         
-        
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-10 gap-6">
           <div>
             <FadeIn delay={20}>
@@ -51,7 +50,6 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
             </FadeIn>
           </div>
 
-          
           <div className="flex items-center gap-3 p-2 rounded-xl border border-neutral-800 bg-neutral-900/80 backdrop-blur-md self-start md:self-auto">
             <div className="flex items-center gap-2 px-3 py-1.5 border-r border-neutral-800">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -73,9 +71,7 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
           </div>
         </div>
 
-        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          
           
           <div className={`lg:col-span-5 p-6 rounded-2xl border flex flex-col justify-between ${
             darkMode ? 'bg-neutral-900/70 border-neutral-800' : 'bg-white border-neutral-200'
@@ -91,9 +87,7 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
                 </span>
               </div>
 
-              
               <div className="space-y-4">
-                
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
                     <span className="text-emerald-400 font-medium">Easy Problems</span>
@@ -107,7 +101,6 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
                   </div>
                 </div>
 
-                
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
                     <span className="text-amber-400 font-medium">Medium Problems (Core Backend Focus)</span>
@@ -121,7 +114,6 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
                   </div>
                 </div>
 
-                
                 <div>
                   <div className="flex justify-between text-xs font-mono mb-1.5">
                     <span className="text-rose-400 font-medium">Hard (Advanced Algorithms)</span>
@@ -137,7 +129,6 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
               </div>
             </div>
 
-            
             <div className="pt-6 border-t border-neutral-800/80 mt-6 flex items-center justify-between text-xs font-mono">
               <span className="text-neutral-400">Consistency Streak</span>
               <span className="text-emerald-400 font-bold flex items-center gap-1.5">
@@ -147,7 +138,6 @@ export const DsaTelemetrySection: React.FC<DsaTelemetrySectionProps> = ({ darkMo
             </div>
           </div>
 
-          
           <div className={`lg:col-span-7 p-6 rounded-2xl border ${
             darkMode ? 'bg-neutral-900/70 border-neutral-800' : 'bg-white border-neutral-200'
           }`}>

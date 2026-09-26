@@ -28,13 +28,11 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
   darkMode,
 }) => {
   const [activeSkillCategory, setActiveSkillCategory] = useState<number>(0);
-  
   const btechDegree = EDUCATION_HISTORY[0];
 
   return (
     <section id="experience" className="pt-6 pb-12 md:pt-8 md:pb-16 relative">
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10">
-        
         
         <div className="mb-10 md:mb-12">
           <FadeIn delay={20}>
@@ -55,9 +53,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
           </FadeIn>
         </div>
 
-        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          
           
           <FadeIn delay={160} className="lg:col-span-7 space-y-6">
             <div className="flex items-center justify-between pb-2 border-b border-neutral-800/80">
@@ -77,13 +73,11 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
               <div className="space-y-6">
                 {WORK_EXPERIENCE.map((exp) => (
                   <div key={exp.id} data-timeline-item="true" className="relative group">
-                    
                     <div 
                       className="absolute left-[11px] sm:left-[15px] top-6 w-5 sm:w-7 h-[1px] bg-gradient-to-r from-neutral-800 to-transparent pointer-events-none group-hover:from-emerald-500/80 group-hover:to-emerald-500/20 transition-all duration-300" 
                       aria-hidden="true" 
                     />
 
-                    
                     <div 
                       className={`absolute left-[11px] sm:left-[15px] -translate-x-1/2 top-6 w-4 h-4 rounded-full border flex items-center justify-center transition-all duration-300 z-10 ${
                         exp.current 
@@ -98,7 +92,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                       />
                     </div>
 
-                    
                     <div
                       className={`p-6 rounded-xl border transform-gpu transition-all duration-300 ease-out hover:-translate-y-1 ${
                         darkMode 
@@ -106,7 +99,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                           : 'bg-white border-neutral-200 shadow-sm hover:shadow-[0_16px_32px_-12px_rgba(0,0,0,0.12),0_0_16px_rgba(16,185,129,0.1)] hover:border-emerald-500/40'
                       }`}
                     >
-                      
                       <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
                         <h4 className="text-lg font-bold font-display text-neutral-100 group-hover:text-emerald-400 transition-colors">
                           {exp.role}
@@ -129,7 +121,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                         {exp.description}
                       </p>
 
-                      
                       <ul className="space-y-1.5 text-xs text-neutral-400 mb-4">
                         {exp.accomplishments.map((acc, aIdx) => (
                           <li key={aIdx} className="flex items-start gap-2">
@@ -139,7 +130,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                         ))}
                       </ul>
 
-                      
                       <div className="flex flex-wrap gap-1.5 pt-3 border-t border-neutral-800/60">
                         {exp.technologies.map((t) => (
                           <span key={t} className="px-2 py-0.5 text-[11px] font-mono rounded bg-neutral-800/70 text-neutral-300 group-hover:text-white transition-colors">
@@ -154,9 +144,7 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
             </AnimatedTimelineTrack>
           </FadeIn>
 
-          
           <FadeIn delay={200} className="lg:col-span-5 space-y-6">
-            
             
             <div>
               <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider font-mono flex items-center gap-2 mb-4">
@@ -167,7 +155,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
               <div className={`p-6 rounded-xl border ${
                 darkMode ? 'bg-neutral-900/40 border-neutral-800' : 'bg-white border-neutral-200 shadow-sm'
               }`}>
-                
                 <div className="space-y-1 mb-6">
                   {SKILL_CATEGORIES.map((cat, idx) => (
                     <button
@@ -185,7 +172,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                   ))}
                 </div>
 
-                
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-[11px] text-neutral-500 font-mono uppercase tracking-wider">
@@ -218,7 +204,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
               </div>
             </div>
 
-            
             <div className={`p-5 rounded-xl border font-mono text-xs space-y-3 ${
               darkMode ? 'bg-neutral-950/80 border-neutral-800 text-neutral-400' : 'bg-neutral-50 border-neutral-200 text-neutral-700'
             }`}>
@@ -244,7 +229,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
               </div>
             </div>
 
-            
             <div className="space-y-3">
               <div className="flex items-center justify-between pb-2 border-b border-neutral-800/80">
                 <h3 className="text-sm font-semibold text-neutral-200 uppercase tracking-wider font-mono flex items-center gap-2">
@@ -277,7 +261,6 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
               </div>
             </div>
 
-            
             {btechDegree && (
               <div className="space-y-3 pt-2">
                 <div className="flex items-center justify-between pb-2 border-b border-neutral-800/80">

@@ -3,13 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 interface TextRevealProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; 
-  duration?: number; 
-  distance?: number; 
+  delay?: number; // ms
+  duration?: number; // ms
+  distance?: number; // px from left
   as?: React.ElementType;
   once?: boolean;
 }
-
 
 export const TextReveal: React.FC<TextRevealProps> = ({
   children,
@@ -28,7 +27,6 @@ export const TextReveal: React.FC<TextRevealProps> = ({
     const el = elementRef.current;
     if (!el) return;
 
-    
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight - 30 && rect.bottom > 0) {
       const timer = setTimeout(() => {
@@ -48,7 +46,6 @@ export const TextReveal: React.FC<TextRevealProps> = ({
               observer.unobserve(el);
             }
           } else if (!once) {
-            
             if (entry.boundingClientRect.top > window.innerHeight) {
               setIsVisible(false);
               setHasShimmered(false);
@@ -58,7 +55,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px', 
+        rootMargin: '0px 0px -40px 0px', // triggers right as the scroll wheel brings it into view
       }
     );
 
@@ -86,7 +83,6 @@ export const TextReveal: React.FC<TextRevealProps> = ({
     >
       {children}
 
-      
       {isVisible && !hasShimmered && (
         <span
           aria-hidden="true"

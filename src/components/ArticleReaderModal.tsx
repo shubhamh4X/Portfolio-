@@ -18,7 +18,6 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [bookmarked, setBookmarked] = useState(false);
 
-  
   useEffect(() => {
     if (!article) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -30,7 +29,6 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [article, onClose]);
 
-  
   useEffect(() => {
     if (article) {
       const originalOverflow = document.body.style.overflow;
@@ -49,11 +47,9 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
-  
   const renderFormattedContent = (rawText: string) => {
     const sections = rawText.split('```');
     return sections.map((sec, idx) => {
-      
       if (idx % 2 === 0) {
         const lines = sec.trim().split('\n');
         return (
@@ -98,7 +94,6 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
           </div>
         );
       } else {
-        
         const lines = sec.trim().split('\n');
         const lang = lines[0];
         const codeBody = lines.slice(1).join('\n');
@@ -145,7 +140,6 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        
         <div className={`p-4 px-6 border-b flex items-center justify-between shrink-0 ${
           darkMode ? 'border-neutral-800 bg-neutral-950/80' : 'border-neutral-200 bg-neutral-50'
         }`}>
@@ -188,9 +182,7 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
           </div>
         </div>
 
-        
         <div className="overflow-y-auto p-6 sm:p-10 space-y-8">
-          
           
           <div className="space-y-4 max-w-3xl">
             <div className="flex items-center gap-2 text-xs font-mono text-neutral-400">
@@ -226,7 +218,6 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
             </div>
           </div>
 
-          
           {article.tableOfContents && article.tableOfContents.length > 0 && (
             <div className="p-4 rounded-xl border border-neutral-800 bg-neutral-950/60 max-w-3xl">
               <span className="text-xs uppercase tracking-wider text-neutral-400 font-mono font-semibold block mb-2">
@@ -247,12 +238,10 @@ export const ArticleReaderModal: React.FC<ArticleReaderModalProps> = ({
             </div>
           )}
 
-          
           <div className="max-w-3xl border-t border-neutral-800/80 pt-6 prose prose-invert">
             {renderFormattedContent(article.content)}
           </div>
 
-          
           <div className="max-w-3xl pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <span className="text-xs text-neutral-500 font-mono">TOPICS:</span>

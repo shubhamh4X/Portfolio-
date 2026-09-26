@@ -77,10 +77,6 @@ export const CURATED_DSA_PROBLEMS: DsaProblem[] = [
     solutionCode: `import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Production-Grade LRU Cache
- * Used as the fundamental building block of distributed in-memory cache engines.
- */
 public class LRUCache {
     private static class Node {
         int key;
@@ -211,10 +207,6 @@ import java.util.Collection;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/**
- * Production Consistent Hash Ring with Virtual Nodes
- * Powers horizontal partitioning and partition fault recovery.
- */
 public class ConsistentHashRing<T> {
     private final int numberOfReplicas;
     private final SortedMap<Long, T> circle = new TreeMap<>();
@@ -243,7 +235,6 @@ public class ConsistentHashRing<T> {
         long hash = hash(key.toString());
         if (!circle.containsKey(hash)) {
             SortedMap<Long, T> tailMap = circle.tailMap(hash);
-            // Wrap around circular ring if hash exceeds all nodes
             hash = tailMap.isEmpty() ? circle.firstKey() : tailMap.firstKey();
         }
         return circle.get(hash);
@@ -337,10 +328,6 @@ class ConsistentHashRing:
     url: 'https://leetcode.com/problems/course-schedule-ii/',
     solutionCode: `import java.util.*;
 
-/**
- * Dependency Graph Topological Order Generator
- * Resolves complex microservice startup ordering and DAG workflow execution.
- */
 public class TopologicalDAGScheduler {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         List<List<Integer>> adj = new ArrayList<>(numCourses);
@@ -376,7 +363,6 @@ public class TopologicalDAGScheduler {
             }
         }
 
-        // Circular dependency detected if not all vertices could be resolved
         return index == numCourses ? order : new int[0];
     }
 }`,
@@ -440,10 +426,6 @@ class TopologicalDAGScheduler:
     solutionCode: `import java.util.ArrayDeque;
 import java.util.Deque;
 
-/**
- * Real-Time Stream Window Aggregator
- * Evaluates peak throughput / metric bounds over continuous sliding windows.
- */
 public class SlidingWindowMax {
     public int[] maxSlidingWindow(int[] nums, int k) {
         if (nums == null || k <= 0) return new int[0];
@@ -451,23 +433,19 @@ public class SlidingWindowMax {
         int[] result = new int[n - k + 1];
         int resIdx = 0;
 
-        // Deque stores indices, values are strictly monotonically decreasing
         Deque<Integer> deque = new ArrayDeque<>();
 
         for (int i = 0; i < n; i++) {
-            // 1. Evict elements that fell outside the current window
             while (!deque.isEmpty() && deque.peekFirst() < i - k + 1) {
                 deque.pollFirst();
             }
 
-            // 2. Maintain monotonic invariant: remove smaller elements from back
             while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
                 deque.pollLast();
             }
 
             deque.offerLast(i);
 
-            // 3. Record window maximum once initial window of size k is formed
             if (i >= k - 1) {
                 result[resIdx++] = nums[deque.peekFirst()];
             }
@@ -535,10 +513,6 @@ class SlidingWindowMax:
     solutionCode: `import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-/**
- * High-Throughput Thread-Safe Bounded Queue
- * Demonstrates lock condition variables, zero deadlocks, and graceful backpressure.
- */
 public class BoundedBlockingQueue {
     private final int[] buffer;
     private int head = 0;
@@ -657,15 +631,11 @@ class BoundedBlockingQueue:
     url: 'https://leetcode.com/problems/coin-change/',
     solutionCode: `import java.util.Arrays;
 
-/**
- * Optimal Resource Packing via Dynamic Programming
- */
 public class CoinChangeOptimizer {
     public int coinChange(int[] coins, int amount) {
         if (amount < 1) return 0;
         
         int[] dp = new int[amount + 1];
-        // Fill with unreachable ceiling bound
         Arrays.fill(dp, amount + 1);
         dp[0] = 0;
 

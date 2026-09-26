@@ -18,9 +18,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className={`sticky top-0 z-40 w-full backdrop-blur-md transition-colors duration-200 ${
       darkMode ? 'bg-neutral-950/80 border-b border-neutral-800/80 text-neutral-100' : 'bg-white/85 border-b border-neutral-200 text-neutral-900'
     }`}>
-      
       <div className="max-w-[1680px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-16 flex items-center justify-between">
-        
         
         <a 
           href="#home" 
@@ -29,7 +27,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <span>{PERSONAL_INFO.preferredName || 'SHUBHAM'}</span>
         </a>
 
-        
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-neutral-400 hover:text-neutral-300">
           <a href="#projects" className="transition-colors hover:text-emerald-400">
             Projects
@@ -51,7 +48,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
         </nav>
 
-        
         <div className="flex items-center">
           <button
             onClick={onToggleDarkMode}

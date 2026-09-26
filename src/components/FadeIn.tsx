@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 interface FadeInProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; 
-  duration?: number; 
-  yOffset?: number; 
+  delay?: number; // ms
+  duration?: number; // ms
+  yOffset?: number; // subtle vertical float in pixels, default 10px
   as?: React.ElementType;
   once?: boolean;
 }
@@ -26,7 +26,6 @@ export const FadeIn: React.FC<FadeInProps> = ({
     const el = elementRef.current;
     if (!el) return;
 
-    
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight - 30 && rect.bottom > 0) {
       const timer = setTimeout(() => setIsVisible(true), delay);
@@ -42,7 +41,6 @@ export const FadeIn: React.FC<FadeInProps> = ({
               observer.unobserve(el);
             }
           } else if (!once) {
-            
             if (entry.boundingClientRect.top > window.innerHeight) {
               setIsVisible(false);
             }

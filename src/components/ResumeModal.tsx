@@ -26,7 +26,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        
         <div className={`p-4 px-6 border-b flex items-center justify-between shrink-0 no-print ${
           darkMode ? 'border-neutral-800 bg-neutral-950/80' : 'border-neutral-200 bg-neutral-50'
         }`}>
@@ -54,9 +53,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
           </div>
         </div>
 
-        
         <div className="overflow-y-auto p-8 sm:p-12 space-y-8 bg-neutral-950 text-neutral-100 font-sans print:p-0 print:bg-white print:text-black">
-          
           
           <div className="border-b border-neutral-800 pb-6 print:border-neutral-300">
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
@@ -97,7 +94,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
             </div>
           </div>
 
-          
           <div className="space-y-3">
             <h2 className="text-xs font-mono uppercase tracking-wider text-emerald-400 print:text-emerald-800 font-bold border-b border-neutral-800 print:border-neutral-300 pb-1">
               Technical Skills & Proficiencies
@@ -114,7 +110,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
             </div>
           </div>
 
-          
           <div className="space-y-4">
             <h2 className="text-xs font-mono uppercase tracking-wider text-emerald-400 print:text-emerald-800 font-bold border-b border-neutral-800 print:border-neutral-300 pb-1">
               Key Engineering Projects
@@ -138,7 +133,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
             </div>
           </div>
 
-          
           <div className="space-y-6">
             <h2 className="text-xs font-mono uppercase tracking-wider text-emerald-400 print:text-emerald-800 font-bold border-b border-neutral-800 print:border-neutral-300 pb-1">
               Practical Experience & Engineering Trajectory
@@ -174,7 +168,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
             </div>
           </div>
 
-          
           <div className="space-y-3">
             <h2 className="text-xs font-mono uppercase tracking-wider text-emerald-400 print:text-emerald-800 font-bold border-b border-neutral-800 print:border-neutral-300 pb-1">
               Education
@@ -202,7 +195,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
             </div>
           </div>
 
-          
           <div className="space-y-3">
             <h2 className="text-xs font-mono uppercase tracking-wider text-emerald-400 print:text-emerald-800 font-bold border-b border-neutral-800 print:border-neutral-300 pb-1">
               Key Achievements & Badges
