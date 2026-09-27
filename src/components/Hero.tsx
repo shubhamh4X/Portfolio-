@@ -102,8 +102,7 @@ export const Hero: React.FC<HeroProps> = ({
             <FadeIn delay={120}>
               <p className="text-lg sm:text-xl text-neutral-400 max-w-3xl font-normal leading-relaxed">
                 Results-driven Java Backend Developer experienced in building robust RESTful APIs, 
-                secure Spring Boot microservices, real-time WebSocket messaging, and production AI platforms. 
-                NIT Durgapur CSE (AI & ML) with 300+ solved DSA problems.
+                secure Spring Boot microservices, real-time WebSocket messaging, and production AI platforms with 300+ solved DSA problems.
               </p>
             </FadeIn>
 

@@ -61,7 +61,7 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
         <div className="pl-3 border-l-2 border-emerald-500/40 text-neutral-300">
           <p className="font-medium text-emerald-400">Shubham Das (@shubhamh4X)</p>
           <p className="text-neutral-400 text-[11px] mt-0.5">
-            Java Backend &amp; AI/ML Engineer &mdash; NIT Durgapur CSE (AI &amp; ML)
+            Java Backend &amp; AI/ML Engineer &mdash; B.Tech in CSE (AI &amp; ML)
           </p>
         </div>
       )
@@ -75,7 +75,7 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
         <div className="pl-3 border-l-2 border-cyan-500/40 text-[11px] text-neutral-400 space-y-0.5">
           <p><span className="text-cyan-300">"backend"</span>: ["Java 17/21", "Spring Boot", "REST APIs", "JWT", "WebSockets"],</p>
           <p><span className="text-cyan-300">"ai_rag"</span>: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Redis"],</p>
-          <p><span className="text-cyan-300">"education"</span>: "NIT Durgapur CSE (AI &amp; ML)",</p>
+          <p><span className="text-cyan-300">"education"</span>: "B.Tech in CSE (AI &amp; ML)",</p>
           <p><span className="text-cyan-300">"milestones"</span>: "300+ DSA Problems · 3× Hackathon Winner"</p>
         </div>
       )
@@ -159,7 +159,7 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
             <p className="text-neutral-400 leading-relaxed">{PERSONAL_INFO.shortBio}</p>
             <div className="pt-1 flex flex-wrap gap-2 text-[10px] text-neutral-500">
               <span>📍 {PERSONAL_INFO.location}</span>
-              <span>🎓 NIT Durgapur CSE (AI &amp; ML)</span>
+              <span>🎓 B.Tech in CSE (AI &amp; ML)</span>
               <span>⚡ {PERSONAL_INFO.availability}</span>
             </div>
           </div>
@@ -247,15 +247,15 @@ export const RuntimeTerminal: React.FC<RuntimeTerminalProps> = ({
             <div className="pl-3 border-l-2 border-cyan-500/40 text-[11px] text-neutral-400 space-y-0.5">
               <p><span className="text-cyan-300">"backend"</span>: ["Java 17/21", "Spring Boot", "REST APIs", "JWT", "WebSockets"],</p>
               <p><span className="text-cyan-300">"ai_rag"</span>: ["Python", "FastAPI", "PostgreSQL", "pgvector", "Redis"],</p>
-              <p><span className="text-cyan-300">"education"</span>: "NIT Durgapur CSE (AI &amp; ML)",</p>
+              <p><span className="text-cyan-300">"education"</span>: "B.Tech in CSE (AI &amp; ML)",</p>
               <p><span className="text-cyan-300">"milestones"</span>: "300+ DSA Problems · 3× Hackathon Winner"</p>
             </div>
           );
         } else if (arg === 'education.txt') {
           outputNode = (
             <div className="pl-3 border-l-2 border-emerald-500/40 text-[11px] text-neutral-300 space-y-1">
-              <p className="font-semibold text-emerald-400">National Institute of Technology (NIT) Durgapur</p>
-              <p>B.Tech in Computer Science &amp; Engineering (Specialization: AI &amp; ML)</p>
+              <p className="font-semibold text-emerald-400">B.Tech in Computer Science &amp; Engineering</p>
+              <p>Specialization: Artificial Intelligence &amp; Machine Learning</p>
               <p className="text-neutral-400 text-[10px]">Undergraduate Degree · West Bengal, India</p>
               <div className="pt-1 text-neutral-400 text-[10px] space-y-0.5">
                 <p>&bull; Higher Secondary (Class XII): Council for the Indian School Certificate Examinations</p>
@@ -373,7 +373,7 @@ Java Backend Eng.`}
                 <p className="text-emerald-400 font-bold">shubham@runtime.shubham.io</p>
                 <p className="text-neutral-600">--------------------------</p>
                 <p><span className="text-cyan-400">OS:</span> ShubhamOS Linux x86_64</p>
-                <p><span className="text-cyan-400">Host:</span> NIT Durgapur CSE Node</p>
+                <p><span className="text-cyan-400">Host:</span> High-Throughput Java Edge Node</p>
                 <p><span className="text-cyan-400">Kernel:</span> 6.8.0-java21-spring</p>
                 <p><span className="text-cyan-400">Uptime:</span> 99.99% (Continuous High-Availability)</p>
                 <p><span className="text-cyan-400">Shell:</span> zsh 5.9 (runtime.shubham.io)</p>

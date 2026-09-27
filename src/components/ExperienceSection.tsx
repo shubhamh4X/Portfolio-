@@ -109,11 +109,15 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
 
                       <div className="text-xs text-neutral-400 font-mono mb-3 flex items-center gap-2">
                         <span className="text-neutral-200 font-semibold">{exp.company}</span>
-                        <span aria-hidden="true" className="text-neutral-600">·</span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="w-3 h-3 text-neutral-500" />
-                          <span>{exp.location}</span>
-                        </span>
+                        {exp.location && (
+                          <>
+                            <span aria-hidden="true" className="text-neutral-600">·</span>
+                            <span className="flex items-center gap-1">
+                              <MapPin className="w-3 h-3 text-neutral-500" />
+                              <span>{exp.location}</span>
+                            </span>
+                          </>
+                        )}
                       </div>
 
                       <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-4">
@@ -236,25 +240,27 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {ACHIEVEMENTS_LIST.slice(0, 4).map((ach, idx) => (
                   <div
                     key={idx}
-                    className={`p-3.5 rounded-xl border transition-all duration-200 hover:-translate-y-0.5 ${
+                    className={`p-4 rounded-xl border flex flex-col justify-between transition-all duration-200 hover:-translate-y-0.5 ${
                       darkMode 
-                        ? 'bg-neutral-900/40 border-neutral-800/80 hover:border-emerald-500/40' 
-                        : 'bg-white border-neutral-200 hover:border-emerald-500/40'
+                        ? 'bg-neutral-900/60 border-neutral-800/90 hover:border-emerald-500/40 shadow-sm' 
+                        : 'bg-white border-neutral-200 hover:border-emerald-500/40 shadow-sm'
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-1 mb-1">
-                      <span className="text-xs font-bold text-neutral-100">{ach.title}</span>
-                      <span className="text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 shrink-0">
-                        {ach.badge}
-                      </span>
+                    <div>
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <span className={`text-xs font-bold leading-snug ${darkMode ? 'text-neutral-100' : 'text-neutral-900'}`}>{ach.title}</span>
+                        <span className="text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0">
+                          {ach.badge}
+                        </span>
+                      </div>
+                      <p className={`text-xs leading-relaxed ${darkMode ? 'text-neutral-300' : 'text-neutral-600'}`}>
+                        {ach.description}
+                      </p>
                     </div>
-                    <p className="text-[11px] text-neutral-400 leading-snug line-clamp-2">
-                      {ach.description}
-                    </p>
                   </div>
                 ))}
               </div>

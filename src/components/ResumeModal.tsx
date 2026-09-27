@@ -146,7 +146,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
                       {exp.role} <span className="font-normal text-neutral-400 print:text-neutral-600">@ {exp.company}</span>
                     </h3>
                     <span className="text-[11px] font-mono text-neutral-400 print:text-neutral-600">
-                      {exp.period} · {exp.location}
+                      {exp.period}{exp.location ? ` · ${exp.location}` : ''}
                     </span>
                   </div>
 
@@ -202,12 +202,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose, darkM
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               {ACHIEVEMENTS_LIST.map((ach, idx) => (
-                <div key={idx} className="p-2.5 rounded-lg border border-neutral-800/60 bg-neutral-900/30 print:bg-white print:border-neutral-300">
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-neutral-200 print:text-black">{ach.title}</span>
-                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">{ach.badge}</span>
+                <div key={idx} className="p-3 rounded-lg border border-neutral-800/80 bg-neutral-900/50 print:bg-white print:border-neutral-300">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="font-bold text-neutral-100 print:text-black">{ach.title}</span>
+                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/20 shrink-0">{ach.badge}</span>
                   </div>
-                  <p className="text-[11px] text-neutral-400 print:text-neutral-700 mt-1 leading-snug">
+                  <p className="text-xs text-neutral-300 print:text-neutral-700 leading-relaxed">
                     {ach.description}
                   </p>
                 </div>

@@ -128,7 +128,7 @@ export interface WorkExperience {
   id: string;
   role: string;
   company: string;
-  location: string;
+  location?: string;
   period: string;
   current: boolean;
   description: string;

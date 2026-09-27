@@ -11,7 +11,7 @@ export const PERSONAL_INFO = {
   github: 'https://github.com/shubhamh4X',
   githubUsername: 'shubhamh4X',
   avatarUrl: 'https://avatars.githubusercontent.com/u/121857404?v=4',
-  bioDetail: 'Java Backend Developer | Spring Boot, WebSockets & REST APIs | 300+ DSA Solved | NIT Durgapur CSE (AI & ML)',
+  bioDetail: 'Java Backend Developer | Spring Boot, WebSockets & REST APIs | 300+ DSA Solved | B.Tech CSE (AI & ML)',
   linkedin: 'https://www.linkedin.com/in/shubhamh4x/',
   hackerrank: 'https://www.hackerrank.com/profile/shubhamdash4x',
   availability: 'Available for Software Engineering Roles & Backend Consulting',
@@ -19,7 +19,7 @@ export const PERSONAL_INFO = {
     { label: 'DSA Solved', value: '300+', detail: 'HackerRank & LeetCode problems solved' },
     { label: 'Backend Projects', value: '4 Built', detail: 'Spring Boot, WebSockets, REST & Microservices' },
     { label: 'Hackathons', value: '3× Won', detail: '3× First Place, 5× Participant' },
-    { label: 'Education', value: 'B.Tech', detail: 'NIT Durgapur CSE (AI & ML)' },
+    { label: 'Education', value: 'B.Tech', detail: 'Computer Science & Engineering (AI & ML)' },
   ]
 };
 
@@ -585,8 +585,8 @@ DSA directly dictates how production backends behave under load: knowing when to
 
 export const EDUCATION_HISTORY: EducationItem[] = [
   {
-    institution: 'National Institute of Technology Durgapur',
-    degree: 'BTECH – CSE (AI & ML)',
+    institution: 'Undergraduate Program in Computer Science & Engineering',
+    degree: 'B.Tech in CSE (AI & ML)',
     period: 'Undergraduate Degree',
     location: 'West Bengal, India',
     highlights: [
@@ -654,7 +654,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'exp-openai',
     role: 'AI Engineering / Research Intern',
     company: 'OpenAI',
-    location: 'LA, U.S.A',
     period: '2025',
     current: false,
     description: 'Researched and implemented LLM/ML systems involving model evaluation, inference, and data pipelines.',
@@ -671,7 +670,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'exp-amazon',
     role: 'Machine Learning / Software Engineering Intern',
     company: 'Amazon',
-    location: 'Bangalore, India',
     period: '2024',
     current: false,
     description: 'Developed scalable ML and software systems using Python, AWS, and cloud-native frameworks.',
@@ -688,7 +686,6 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'exp-microsoft',
     role: 'Software Engineering / AI Intern',
     company: 'Microsoft',
-    location: 'Bangalore, India',
     period: '2023',
     current: false,
     description: 'Developed production software using Python/C++/TypeScript for intelligent cloud services.',
@@ -705,8 +702,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: 'exp-google',
     role: 'AI/ML Engineering Intern',
     company: 'Google',
-    location: 'Bangalore, India',
-    period: '2022',
+    period: '2023',
     current: false,
     description: 'Developed and optimized machine learning pipelines using Python, TensorFlow/PyTorch, and large-scale data processing frameworks.',
     accomplishments: [
@@ -727,7 +723,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Staff Engineer & Research Lead',
     company: 'Top-Tier Tech Collaboration',
     content: 'Shubham possesses extraordinary problem-solving speed and depth. Whether building high-concurrency Spring Boot WebSockets or optimizing ML evaluation pipelines, he combines rigorous computer science fundamentals with execution speed.',
-    metric: 'NIT Durgapur CSE & 3× Hackathon Winner'
+    metric: 'B.Tech CSE & 3× Hackathon Winner'
   },
   {
     id: 't-2',
